@@ -1,0 +1,9 @@
+<%= form_for(@good , url: goods_path) do |f| %>
+  <%= f.text_field :name, placeholder: "商品名" %>
+  <%= f.text_field :stock_num, placeholder: "現在の在庫数" %>
+  <%= f.text_field :notification_num, placeholder: "通知在庫数" %>
+  <%= f.text_field :image, placeholder: "画像URL" %>
+  <%= f.text_field :amazon_url, placeholder: "アマゾンURL" %>
+  <%= f.text_field :category_id, placeholder: "カテゴリーid" %>
+  <%= f.submit "登録する" %>
+<% end %>
