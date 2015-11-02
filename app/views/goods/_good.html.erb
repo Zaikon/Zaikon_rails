@@ -1,6 +1,17 @@
-<ul>
+<ul id="<%= good.id %>" class="count">
   <%= image_tag good.image %>
-  <li><%= good.name %></li>
-  <li><%= good.stock_num %></li>
-  <li><%= good.notification_num %></li>
+  <li>商品名：<%= good.name %></li>
+  <li>
+    在庫数：
+    <span id="good_<%= good.id %>_num"><%= good.stock_num %></span> カウント
+    <%= form_tag('goods/num_up', remote: true, id: "good_#{good.id}") do %>
+      <%= hidden_field_tag :id, good.id %>
+      <%= submit_tag("↑") %>
+    <% end %>
+    <%= form_tag('goods/num_down', remote: true, id: "good_#{good.id}") do %>
+      <%= hidden_field_tag :id, good.id %>
+      <%= submit_tag("↓") %>
+    <% end %>
+  </li>
+  <li>通知在庫数：<%= good.notification_num %></li>
 </ul>
