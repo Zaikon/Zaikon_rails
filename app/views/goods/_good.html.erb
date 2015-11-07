@@ -3,7 +3,7 @@
   <li>商品名：<%= good.name %></li>
   <li>
     在庫数：
-    <span id="good_<%= good.id %>_num"><%= good.stock_num %></span> カウント
+    <span id="good_<%= good.id %>_num"><%= good.stock_num %>　<%= good.counting_type %></span>
     <%= form_tag('goods/num_up', remote: true, id: "good_#{good.id}") do %>
       <%= hidden_field_tag :id, good.id %>
       <%= submit_tag("↑") %>
