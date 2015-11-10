@@ -15,6 +15,16 @@ class GoodsController < ApplicationController
     redirect_to :action => "index"
   end
 
+  def edit
+    @good = Good.find(params[:id])
+  end
+
+  def update
+    good = Good.find(params[:id])
+    good.update(create_params)
+    redirect_to :action => "index"
+  end
+
   def up
     good = Good.find(params[:id])
     good.increment(:stock_num)
@@ -33,7 +43,7 @@ class GoodsController < ApplicationController
 
   private
   def create_params
-    params.require(:good).permit(:name, :stock_num, :nitification_num, :image, :amazon_url, :category_id)
+    params.require(:good).permit(:name, :stock_num, :notification_num, :image, :amazon_url, :category_id, :counting_type)
   end
 
   def unlogin #ログインしていないユーザーの不正なアクセスに対してリダイレクトする。

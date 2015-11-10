@@ -1,0 +1,20 @@
+<div class="contents row">
+  <%= form_for(@good, url: good_path) do |f| %>
+    <p>商品名</p>
+    <%= f.text_field :name, placeholder: "#{@good.name}" %>
+    <p>現在の在庫数</p>
+    <%= f.text_field :stock_num, placeholder: "#{@good.stock_num}" %>
+    <p>通知在庫数</p>
+    <%= f.text_field :notification_num, placeholder: "#{@good.notification_num}" %>
+    <p>数え方</p>
+    <%= f.text_field :counting_type, placeholder: "#{@good.counting_type}" %>
+    <p>画像URL</p>
+    <%= f.text_field :image, placeholder: "#{@good.image}" %>
+    <p>アマゾンURL</p>
+    <%= f.text_field :amazon_url, placeholder: "#{@good.amazon_url}" %>
+    <p>カテゴリーID</p>
+    <%= f.text_field :category_id, placeholder: "#{@good.category_id}" %>
+    <br>
+    <%= f.submit "再登録する" %>
+  <% end %>
+</div>

@@ -20,4 +20,8 @@
   <li>通知を送る最低在庫数：<%= good.notification_num %> <%= good.counting_type %></li>
 <!-- amazonへのリンク -->
   <li><a href="<%= good.amazon_url %>" target="blank">購入画面へ</a></li>
+<!-- 編集画面へのリンク -->
+  <li>
+    <%= link_to '編集する', edit_good_path(good) %>
+  </li>
 </ul>
