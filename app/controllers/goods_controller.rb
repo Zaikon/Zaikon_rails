@@ -1,6 +1,6 @@
 class GoodsController < ApplicationController
   #ログインしていないユーザーが不正なアクセスをしない様に、予め設定しておく。
-  before_action :unlogin, except: [:index]
+  before_action :authenticate_user!
 
   def index
     @goods = Good.all
@@ -46,9 +46,4 @@ class GoodsController < ApplicationController
     params.require(:good).permit(:name, :stock_num, :notification_num, :image, :amazon_url, :category_id, :counting_type)
   end
 
-  def unlogin #ログインしていないユーザーの不正なアクセスに対してリダイレクトする。
-  unless user_signed_in?
-    redirect_to :action => "index"
-  end
-  end
 end
