@@ -24,4 +24,8 @@
   <li>
     <%= link_to '編集する', edit_good_path(good) %>
   </li>
+<!-- 削除機能 -->
+  <li>
+    <%= link_to '削除する', good_path(good), method: :delete %>
+  </li>
 </ul>
