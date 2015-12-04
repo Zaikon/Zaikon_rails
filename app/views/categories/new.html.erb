@@ -1,0 +1,5 @@
+<%= form_for(@category, url: categories_path) do |f| %>
+  <p>カテゴリー名を入力してください</p>
+  <%= f.text_field :name, placeholder: "カテゴリー名" %>
+  <%= f.submit "登録する" %>
+<% end %>

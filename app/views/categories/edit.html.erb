@@ -1,0 +1,5 @@
+<%= form_for(@category, url: category_path) do |f| %>
+  <p>カテゴリー名を再登録してください！</p>
+  <%= f.text_field :name, placeholder: "#{@category.name}"%>
+  <%= f.submit "再登録する" %>
+<% end %>
