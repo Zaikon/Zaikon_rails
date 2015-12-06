@@ -8,9 +8,9 @@
   </head>
   <body>
 
-  <header>
+  <header class="header">
     <%= link_to root_path do %>
-      <h1>ざいこん(ロゴ)</h1>
+      <p>ざいこん(ロゴ)</p>
     <% end %>
     <% unless user_signed_in? %>
       <%= link_to "ログイン", new_user_session_path %>

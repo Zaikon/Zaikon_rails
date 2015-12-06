@@ -1,14 +1,14 @@
 // Place all the styles related to the goods controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-body {
-  margin:0 auto;
-}
-
-header {
-  height: 100px;
+.header {
+  height: 9%;
   width: 100%;
   margin:0 auto;
-  background-color: #CCFFFF;
+  background-color: rgb(55,173,233);
+  text-align: center;
+}
+
+.header p {
+  color: white;
 }
