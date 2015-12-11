@@ -2,13 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .header {
-  height: 9%;
-  width: 100%;
-  margin:0 auto;
   background-color: rgb(55,173,233);
   text-align: center;
+  position: relative;
+  height: 50px;
 }
 
-.header p {
+.logo {
+  font-size: 30px;
+  display:inline-block;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 4px;
+  }
+
+.logo a{
   color: white;
+}
+
+.dropdown {
+  // display: inline;
+  color :white;
+  font-size: 25px;
+  display: inline;
+  position: absolute;
+  right: 15%;
+  padding-top: 8px;
 }
