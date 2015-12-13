@@ -1,5 +1,4 @@
-<div class="contents row">
-  <%= form_for(@good, url: good_path) do |f| %>
+<%= form_for(@good, url: good_path) do |f| %>
     <p>商品名</p>
     <%= f.text_field :name, placeholder: "#{@good.name}" %>
     <p>現在の在庫数</p>
@@ -16,5 +15,4 @@
     <%= f.text_field :category_id, placeholder: "#{@good.category_id}" %>
     <br>
     <%= f.submit "再登録する" %>
-  <% end %>
-</div>
+<% end %>

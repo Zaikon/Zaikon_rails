@@ -1,1 +1,19 @@
-<%= render @goods %>
+<ul class="nav nav-tabs">
+  <% @categories.each_with_index do |category, i| %>
+    <% if i == 0 %>
+      <li role="presentation" class="active list-<%= i %>" id="list"><a><%= category.name %></a></li>
+    <% else %>
+      <li role="presentation" id="list" class="list-<%= i %>"><a><%= category.name %></a></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<div class="goods_list">
+  <% @categories.each_with_index do |category, i| %>
+    <% if i == 0 %>
+      <div class="active list-<%= i %>"><%= render partial: "goods/good", collection: category.goods %></div>
+    <% else %>
+      <div class="list-<%= i %>"><%= render partial: "goods/good", collection: category.goods %></div>
+    <% end %>
+  <% end %>
+</div>

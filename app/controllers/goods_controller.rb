@@ -4,7 +4,7 @@ class GoodsController < ApplicationController
   # append_after_action :redirect_index, only: [:create, :update, :destroy]
 
   def index
-    @goods = Good.all
+    @categories = Category.where(user_id: current_user.id)
   end
 
   def new
