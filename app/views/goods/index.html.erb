@@ -1,21 +1,26 @@
-<div class="category">
-  <% @categories.each_with_index do |category, i| %>
-    <% if i == 0 %>
-      <a class="active list-<%= i %>" id="list"><a><%= category.name %></a></a>
-    <% else %>
-      <a id="list" class="list-<%= i %>"><a><%= category.name %></a></a>
-    <% end %>
-  <% end %>
-</div>
-
-<div class="main">
-  <div class="goods_list">
+<div class="col-md-12 category">
+  <div class="category_group">
     <% @categories.each_with_index do |category, i| %>
       <% if i == 0 %>
-        <div class="active list-<%= i %>"><%= render partial: "goods/good", collection: category.goods %></div>
+        <a class="active list-<%= i %>" id="list"><%= category.name %></a>
       <% else %>
-        <div class="list-<%= i %>"><%= render partial: "goods/good", collection: category.goods %></div>
+        <a id="list" class="list-<%= i %>"><%= category.name %></a>
       <% end %>
     <% end %>
   </div>
+</div>
+
+
+<div class="main_box">
+  <!-- <div class="col-lg-10"> -->
+    <div class="goods_list col-sm-12">
+      <% @categories.each_with_index do |category, i| %>
+        <% if i == 0 %>
+          <div class="active list-<%= i %> box"><%= render partial: "goods/good", collection: category.goods %></div>
+        <% else %>
+          <div class="list-<%= i %> box"><%= render partial: "goods/good", collection: category.goods %></div>
+        <% end %>
+      <% end %>
+    </div>
+  <!-- </div> -->
 </div>

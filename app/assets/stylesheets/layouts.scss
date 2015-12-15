@@ -1,6 +1,10 @@
 // Place all the styles related to the goods controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+  background-color: rgb(228,228,228);
+}
+
 .header {
   background-color: rgb(55,173,233);
   text-align: center;
@@ -21,6 +25,7 @@
 
 .logo a{
   color: white;
+  text-decoration: none;
 }
 
 .dropdown {

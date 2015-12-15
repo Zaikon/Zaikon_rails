@@ -1,31 +1,46 @@
-<ul id="<%= good.id %>" class="count">
-<!-- 画像の表示 -->
-  <%= image_tag good.image %>
-<!-- 商品名の表示 -->
-  <li>商品名：<%= good.name %></li>
-<!-- 在庫数・単位・の表示 -->
-  <li>
-    在庫数：
-    <span id="good_<%= good.id %>_num"><%= good.stock_num %></span> <span><%= good.counting_type %></span>
-    <%= form_tag('goods/num_up', remote: true, id: "good_#{good.id}") do %>
-      <%= hidden_field_tag :id, good.id %>
-      <%= submit_tag("↑") %>
-    <% end %>
-    <%= form_tag('goods/num_down', remote: true, id: "good_#{good.id}") do %>
-      <%= hidden_field_tag :id, good.id %>
-      <%= submit_tag("↓") %>
-    <% end %>
-  </li>
-<!-- 通知在庫数の表示 -->
-  <li>通知を送る最低在庫数：<%= good.notification_num %> <%= good.counting_type %></li>
-<!-- amazonへのリンク -->
-  <li><a href="<%= good.amazon_url %>" target="blank">購入画面へ</a></li>
-<!-- 編集画面へのリンク -->
-  <li>
-    <%= link_to '編集する', edit_good_path(good) %>
-  </li>
-<!-- 削除機能 -->
-  <li>
-    <%= link_to '削除する', good_path(good), method: :delete %>
-  </li>
+<ul id="<%= good.id %>" class="count col-xs-12 col-sm-6 col-md-4 col-lg-3">
+  <div class="flame">
+  <!-- 画像の表示 -->
+    <div class="image">
+      <%= image_tag(good.image) %>
+    </div>
+  <!-- 商品名の表示 -->
+    <div class="modal">
+      <a>商品名：<%= good.name %></a>
+    </div>
+  <!-- 在庫数・単位・の表示 -->
+    <div class="botton">
+      <div class="left-botton">
+        <%= form_tag('goods/num_up', remote: true, id: "good_#{good.id}") do %>
+          <%= hidden_field_tag :id, good.id %>
+          <%= submit_tag("↑") %>
+        <% end %>
+      </div>
+      <div class="remaining">
+        あと
+        <span id="good_<%= good.id %>_num"><%= good.stock_num %></span> <span><%= good.counting_type %></span>
+      </div>
+      <div class="right-botton">
+        <%= form_tag('goods/num_down', remote: true, id: "good_#{good.id}") do %>
+          <%= hidden_field_tag :id, good.id %>
+          <%= submit_tag("↓") %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="modal">
+    <!-- 通知在庫数の表示 -->
+      <li>通知を送る最低在庫数：<%= good.notification_num %> <%= good.counting_type %></li>
+    <!-- amazonへのリンク -->
+      <li><a href="<%= good.amazon_url %>" target="blank">購入画面へ</a></li>
+    <!-- 編集画面へのリンク -->
+      <li>
+        <%= link_to '編集する', edit_good_path(good) %>
+      </li>
+    <!-- 削除機能 -->
+      <li>
+        <%= link_to '削除する', good_path(good), method: :delete %>
+      </li>
+    </div>
+  </div>
 </ul>
