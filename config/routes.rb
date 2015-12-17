@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :create, :new, :edit, :update, :destroy]
   post '/goods/num_up' => 'goods#up'
   post '/goods/num_down' => 'goods#down'
+
+  namespace :api, defaluts: { format: :json } do
+    resources :categories, only: [:index]
+  end
 end
