@@ -1,0 +1,152 @@
+// カテゴリーに関するCSS
+.category {
+  height: 40px;
+  width: 100%;
+  background-color: rgb(255,255,255);
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.category_group {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  top: 15%;
+}
+
+.category_group a {
+  cursor: default;
+  text-decoration: none;
+}
+
+.category a {
+  color: rgb(143,143,143);
+  font-size: 20px;
+}
+
+.category .active {
+  color: rgb(55,173,233)
+}
+
+// グッズコンテンツ全体に関するCSS
+.goods_list {
+  background-color: rgb(221,221,221);
+}
+
+.outher_flame {
+  margin: 0 15%;
+}
+
+// グッズコンテンツ単体に関するCSS
+.clear {
+  padding: 0;
+  // clear: both;
+  margin: 0 auto;
+}
+
+.count {
+  padding: 0;
+  background-color: white;
+}
+
+.flame {
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 250px;
+  max-height: 325px;
+  min-height: 308px;
+  min-height: 350px;
+  text-align: center;
+  border-radius: 5px;
+  .image {
+    // text-align: center;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: 10% auto;
+    img {
+    max-width: 200px;
+    max-height: 220px;
+    }
+  }
+  .botton {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 18%;
+    border-radius: 0 0 5px 5px;
+    .left-botton {
+      position: absolute;
+      left: 0;
+      width:25%;
+      height: 100%;
+      border-bottom-left-radius: 5px;
+      border-top: solid 1.5px rgb(225, 225, 225);
+      border-right: solid 1.5px rgb(225, 225, 225);
+      font-size: 1.4em;
+      font-weight: bold;
+      background-color: white;
+      form {
+        position: relative;
+        top: 25%;
+      }
+      input {
+        color: rgb(236, 0, 19);
+        background-color: white;
+        border-style: none;
+      }
+    }
+    .remaining {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-top: solid 1.5px rgb(225, 225, 225);
+    color: rgb(108, 108, 108);
+      .fonts {
+        position: relative;
+        top: 10%;
+        .num {
+          font-size: 35px;
+        }
+        span {
+        text-decoration: none;
+        color: rgb(108, 108, 108);
+        font-size: 20px;
+          .small {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+    .right-botton {
+      position: absolute;
+      right: 0;
+      width:25%;
+      height: 100%;
+      border-bottom-right-radius: 5px;
+      border-top: solid 1.5px rgb(225, 225, 225);
+      border-left: solid 1.5px rgb(225, 225, 225);
+      font-size: 1.4em;
+      font-weight: bold;
+      background-color: white;
+      form {
+        position: relative;
+        top: 25%;
+      }
+      input {
+        color: rgb(55,173,233);
+        background-color: white;
+        border-style: none;
+      }
+    }
+  }
+}
+
+.modal {
+  display: none;
+}

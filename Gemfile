@@ -50,4 +50,5 @@ gem 'compass-rails'
 gem 'sprockets', '2.11.0'
 gem 'devise'
 gem 'jquery-turbolinks'
+gem "font-awesome-rails"
 
