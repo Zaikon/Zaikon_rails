@@ -5,12 +5,15 @@
   background-color: rgb(255,255,255);
   text-align: center;
   font-size: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .category_group {
-  margin: auto;
-  padding-top: 5px;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  top: 15%;
 }
 
 .category_group a {
@@ -50,7 +53,7 @@
 
 .flame {
   position: relative;
-  margin: 3px;
+  margin-bottom: 30px;
   max-width: 250px;
   max-height: 325px;
   min-height: 308px;
@@ -104,21 +107,21 @@
     height: 100%;
     border-top: solid 1.5px rgb(225, 225, 225);
     color: rgb(108, 108, 108);
-    .fonts {
-      position: relative;
-      top: 10%;
-      .num {
-        font-size: 35px;
+      .fonts {
+        position: relative;
+        top: 10%;
+        .num {
+          font-size: 35px;
+        }
+        span {
+        text-decoration: none;
+        color: rgb(108, 108, 108);
+        font-size: 20px;
+          .small {
+            font-size: 10px;
+          }
+        }
       }
-      span {
-      text-decoration: none;
-      color: rgb(108, 108, 108);
-      font-size: 20px;
-      .small {
-        font-size: 10px;
-      }
-      }
-    }
     }
     .right-botton {
       position: absolute;
