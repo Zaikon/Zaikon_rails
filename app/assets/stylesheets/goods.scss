@@ -27,105 +27,123 @@
   color: rgb(55,173,233)
 }
 
-// グッズコンテンツに関するCSS
-.main_box {
-  max-width: 80%;
-  // width: 860px;
-  height: 100%;
-  margin: 0 auto    ;
+// グッズコンテンツ全体に関するCSS
+.goods_list {
+  background-color: rgb(221,221,221);
 }
 
-.box {
-  width: 100%;
-  max-height: 100%;
+.outher_flame {
+  margin: 0 15%;
+}
+
+// グッズコンテンツ単体に関するCSS
+.clear {
+  padding: 0;
+  // clear: both;
   margin: 0 auto;
 }
 
 .count {
   padding: 0;
-  // margin: 22px;
-  max-width: 270px;
-  margin-right: 17px;
-  margin-left: 17px;
-  // float: none;
-  // display: inline-block;
-}
-
-// グッズ１つに関するCSS]
-$image_padding: 35px;
-$botton_height: 48px;
-$botton_width: 48px;
-
-$flame_height: ($botton_height*6.5);
-$flame_width: 240px;
-$flame_up_down_margin: 6px;
-
-$flame_border: 5px;
-
-$image_height: $flame_height - ($image_padding*2) - $botton_height;
-$image_width: $flame_width - ($image_padding*2);
-$remaining_width: $flame_width - ($botton_width*2);
-
-.flame {
-  height: $flame_height;
-  min-width: $flame_width;
-  max-width:  $flame_width;
-  background-color: red;
-  text-align: center;
-  border: 0.75px #ccc solid;
-  margin-top: $flame_up_down_margin;
-  margin-bottom: $flame_up_down_margin;
-  border-radius: $flame_border;
-  margin-right: 3px;
-  margin-left: 3px;
-}
-
-.flame .image {
-  text-align: center;
-  padding-right: $image_padding;
-  padding-left: $image_padding;
-  padding-bottom: $image_padding;
-}
-
-.flame .image img{
-  height: $image_height;
-  max-width: $image_width;
-  margin-top: 42px;
-}
-
-.flame .botton {
-  height: $botton_height;
-  width:100%;
-  background-color: blue;
-  border-bottom-right-radius: $flame_border;
-  border-bottom-left-radius: $flame_border;
-}
-
-.flame .botton .left-botton {
-  width: $botton_width;
-  height: 100%;
-  float: left;
-  background-color: green;
-  border-bottom-left-radius: $flame_border;
-}
-
-.flame .botton .remaining {
-  width: $remaining_width;
-  height: 100%;
-  float: left;
   background-color: white;
 }
 
-.flame .botton .right-botton {
-  width: $botton_width;
-  height: 100%;
-  float: left;
-  background-color: green;
-  border-bottom-right-radius: 5px;
+.flame {
+  position: relative;
+  margin: 3px;
+  max-width: 250px;
+  max-height: 325px;
+  min-height: 308px;
+  min-height: 350px;
+  text-align: center;
+  border-radius: 5px;
+  .image {
+    // text-align: center;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: 10% auto;
+    img {
+    max-width: 200px;
+    max-height: 220px;
+    }
+  }
+  .botton {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 18%;
+    border-radius: 0 0 5px 5px;
+    .left-botton {
+      position: absolute;
+      left: 0;
+      width:25%;
+      height: 100%;
+      border-bottom-left-radius: 5px;
+      border-top: solid 1.5px rgb(225, 225, 225);
+      border-right: solid 1.5px rgb(225, 225, 225);
+      font-size: 1.4em;
+      font-weight: bold;
+      background-color: white;
+      form {
+        position: relative;
+        top: 25%;
+      }
+      input {
+        color: rgb(236, 0, 19);
+        background-color: white;
+        border-style: none;
+      }
+    }
+    .remaining {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-top: solid 1.5px rgb(225, 225, 225);
+    color: rgb(108, 108, 108);
+    .fonts {
+      position: relative;
+      top: 10%;
+      .num {
+        font-size: 35px;
+      }
+      span {
+      text-decoration: none;
+      color: rgb(108, 108, 108);
+      font-size: 20px;
+      .small {
+        font-size: 10px;
+      }
+      }
+    }
+    }
+    .right-botton {
+      position: absolute;
+      right: 0;
+      width:25%;
+      height: 100%;
+      border-bottom-right-radius: 5px;
+      border-top: solid 1.5px rgb(225, 225, 225);
+      border-left: solid 1.5px rgb(225, 225, 225);
+      font-size: 1.4em;
+      font-weight: bold;
+      background-color: white;
+      form {
+        position: relative;
+        top: 25%;
+      }
+      input {
+        color: rgb(55,173,233);
+        background-color: white;
+        border-style: none;
+      }
+    }
+  }
 }
 
 .modal {
   display: none;
 }
-
-

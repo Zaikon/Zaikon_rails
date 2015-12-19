@@ -1,5 +1,5 @@
-<div class="col-md-12 category">
-  <div class="category_group">
+<span class="col-xs-12 category">
+  <span class="category_group">
     <% @categories.each_with_index do |category, i| %>
       <% if i == 0 %>
         <a class="active list-<%= i %>" id="list"><%= category.name %></a>
@@ -7,20 +7,17 @@
         <a id="list" class="list-<%= i %>"><%= category.name %></a>
       <% end %>
     <% end %>
-  </div>
-</div>
+  </span>
+</span>
 
-
-<div class="main_box">
-  <!-- <div class="col-lg-10"> -->
-    <div class="goods_list col-sm-12">
-      <% @categories.each_with_index do |category, i| %>
-        <% if i == 0 %>
-          <div class="active list-<%= i %> box"><%= render partial: "goods/good", collection: category.goods %></div>
-        <% else %>
-          <div class="list-<%= i %> box"><%= render partial: "goods/good", collection: category.goods %></div>
-        <% end %>
+<div class="goods_list">
+  <div class="container outher_flame">
+    <% @categories.each_with_index do |category, i| %>
+      <% if i == 0 %>
+        <span class="active list-<%= i %>"><%= render partial: "goods/good", collection: category.goods %></span>
+      <% else %>
+        <span class="list-<%= i %> box" style="display: none;"><%= render partial: "goods/good", collection: category.goods %></span>
       <% end %>
-    </div>
-  <!-- </div> -->
+    <% end %>
+  </div>
 </div>
