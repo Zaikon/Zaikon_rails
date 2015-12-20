@@ -12,10 +12,12 @@ $(function() {
   });
 
   // タブ切り替え機能
-  $('ul #list').on('click', function() {
-    $('ul #list').removeClass("active")
+  $('.category_group a').on('click', function() {
+    $('.category_group a').removeClass("active")
     $('.goods_list div').removeClass("active").css('display','none')
+    console.log("test")
     var list_num = $(this).attr("class")
+    console.log(list_num)
     $(this).addClass("active")
     $('.goods_list' + ' .' + list_num).addClass("active").css('display','block');
   });

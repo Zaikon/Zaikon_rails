@@ -16,6 +16,7 @@ gem 'sprockets', '2.11.0'
 gem 'devise'
 gem 'jquery-turbolinks'
 gem 'doorkeeper'
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'byebug'
