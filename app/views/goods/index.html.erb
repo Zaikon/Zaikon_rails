@@ -10,13 +10,13 @@
   </span>
 </span>
 
-<div class="goods_list">
+<div class="goods_list_a">
   <div class="container outher_flame">
     <% @categories.each_with_index do |category, i| %>
       <% if i == 0 %>
-        <span class="active list-<%= i %>"><%= render partial: "goods/good", collection: category.goods %></span>
+        <div class="goods_list active list-<%= i %>"><%= render partial: "goods/good", collection: category.goods %></div>
       <% else %>
-        <span class="list-<%= i %> box" style="display: none;"><%= render partial: "goods/good", collection: category.goods %></span>
+        <div class="goods_list list-<%= i %>" style="display: none;"><%= render partial: "goods/good", collection: category.goods %></div>
       <% end %>
     <% end %>
   </div>
