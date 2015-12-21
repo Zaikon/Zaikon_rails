@@ -1,10 +1,61 @@
-<%= form_for(@good , url: goods_path) do |f| %>
-  <%= f.text_field :name, placeholder: "商品名" %>
-  <%= f.text_field :stock_num, placeholder: "現在の在庫数" %>
-  <%= f.text_field :notification_num, placeholder: "通知在庫数" %>
-  <%= f.text_field :counting_type, placeholder: "数え方" %>
-  <%= f.text_field :image, placeholder: "画像URL" %>
-  <%= f.text_field :amazon_url, placeholder: "アマゾンURL" %>
-  <%= f.text_field :category_id, placeholder: "カテゴリーid" %>
-  <%= f.submit "登録する" %>
-<% end %>
+<div class="contents row">
+  <h2 class="index_new">新しい商品を登録しましょう！</h2>
+  <%= form_for(@good , url: goods_path) do |f| %>
+
+    <div class="form-group">
+    <%= f.label :商品名 %><br />
+    <%= f.text_field :name, placeholder: "例）おーいお茶 500ml" , class: "form-control form_height" %>
+    </div>
+    <br>
+
+    <div class="form-group">
+    <%= f.label :現在の在庫数（半角英数） %><br />
+    <%= f.text_field :stock_num, placeholder: "現在の在庫数を入力してください" , class: "form-control form_height" %>
+    </div>
+    <br>
+
+    <div class="form-group">
+    <%= f.label :通知在庫数（半角英数） %><br />
+    <%= f.text_field :notification_num, placeholder: "アカウントへ通知を送る在庫数を入力してください" , class: "form-control form_height" %>
+    </div>
+    <br>
+
+    <div class="form-group">
+    <%= f.label :数え方 %><br />
+    <%= f.text_field :counting_type, placeholder: "例）本、袋、ダースなど" , class: "form-control form_height" %>
+    </div>
+    <br>
+
+    <div class="form-group">
+    <%= f.label :画像のURL %><br />
+    <%= f.text_field :image, placeholder: "urlを入力してください" , class: "form-control form_height" %>
+    </div>
+    <br>
+
+    <div class="form-group">
+    <%= f.label :AmazonのURL %><br />
+    <%= f.text_field :amazon_url, placeholder: "urlを入力してください", class: "form-control form_height"  %>
+    </div>
+    <br>
+
+    <div class="form-group">
+    <%= f.label :カテゴリーID（半角英数） %><br />
+    <%= f.text_field :category_id, placeholder: "数字を入力してください" , class: "form-control form_height" %>
+
+    <br>
+    <p>あなたのカテゴリー 一覧</p>
+    <a class="deco_none">ID</a><a class="deco_none">&nbsp;&nbsp;カテゴリー名</a>
+    <br>
+    <% @categories.each do |category| %>
+      <%= category.id %>
+      &nbsp;&nbsp;&nbsp;&nbsp;<%= category.name%>
+      <br>
+    <% end %>
+
+    <br>
+    <%= f.submit "登録する" , class: "submit form_height"%>
+    </div>
+    <br>
+  <% end %>
+
+</div>

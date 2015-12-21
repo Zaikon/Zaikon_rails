@@ -9,6 +9,7 @@ class GoodsController < ApplicationController
 
   def new
     @good = Good.new
+    @categories = Category.where(user_id: current_user.id)
   end
 
   def create
