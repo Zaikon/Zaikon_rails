@@ -14,9 +14,9 @@ $(function() {
   // タブ切り替え機能
   $('.category a').on('click', function() {
     $('.category a').removeClass("active")
-    $('.goods_list').removeClass("active").css('display','none')
+    $('.goods_list').removeClass("active").fadeOut(50);
     var list_num = $(this).attr("class")
     $(this).addClass("active")
-    $('.goods_list' + ' .' + list_num).addClass("active").css('display','block')
+    $('.goods_list_background' + ' .' + list_num).fadeIn(1000);
   });
 });
