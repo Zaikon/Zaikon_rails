@@ -1,3 +1,7 @@
-<%= link_to "カテゴリーを新しく作る", new_category_path %>
-<p>あなたのグループのカテゴリー一覧です！</p>
-<%= render @categories %>
+<div class="contents row">
+  <h2>カテゴリー管理</h2>
+  <br>
+  <%= render @categories %>
+  <span class="_category"><hr></span>
+  <%= link_to "カテゴリーを追加する", new_category_path, :class => 'enter form_height' %>
+</div>
