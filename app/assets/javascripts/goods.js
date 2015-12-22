@@ -12,13 +12,11 @@ $(function() {
   });
 
   // タブ切り替え機能
-  $('.category_group a').on('click', function() {
-    $('.category_group a').removeClass("active")
-    $('.goods_list div').removeClass("active").css('display','none')
-    console.log("test")
+  $('.category a').on('click', function() {
+    $('.category a').removeClass("active")
+    $('.goods_list').removeClass("active").fadeOut(50);
     var list_num = $(this).attr("class")
-    console.log(list_num)
     $(this).addClass("active")
-    $('.goods_list' + ' .' + list_num).addClass("active").css('display','block');
+    $('.goods_list_background' + ' .' + list_num).fadeIn(1000);
   });
 });

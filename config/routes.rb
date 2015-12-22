@@ -9,5 +9,11 @@ Rails.application.routes.draw do
 
   namespace :api, defaluts: { format: :json } do
     resources :categories, only: [:index]
+    resources :goods do
+      member do
+        put 'count_up'
+        put 'count_down'
+      end
+    end
   end
 end
