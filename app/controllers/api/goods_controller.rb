@@ -17,5 +17,4 @@ class Api::GoodsController < ApplicationController
   def set_goods
     @goods = Good.find(params[:id])
   end
->>>>>>> fb31336fd5877663bfdc39a89567ca670eae8aed
 end
