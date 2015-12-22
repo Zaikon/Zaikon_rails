@@ -49,6 +49,8 @@
 .count {
   padding: 0;
   background-color: white;
+   $black: #292929;
+    box-shadow: 0 0 6px rgba($black,0.2);
 }
 
 .flame {
