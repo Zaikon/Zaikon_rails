@@ -19,6 +19,7 @@ class GoodsController < ApplicationController
 
   def edit
     @good = Good.find(params[:id])
+    @categories = Category.where(user_id: current_user.id)
   end
 
   def update
