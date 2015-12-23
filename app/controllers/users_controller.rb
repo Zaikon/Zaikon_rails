@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    user = current_user
+    user.update(edit_params)
     redirect_index
   end
 
@@ -20,5 +22,9 @@ class UsersController < ApplicationController
   private
   def redirect_index
     redirect_to :action => "index"
+  end
+
+  def edit_params
+    params.require(:user).permit(:name, :email)
   end
 end
