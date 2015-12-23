@@ -44,7 +44,7 @@ class GoodsController < ApplicationController
     good = Good.find(params[:id])
     good.decrement(:stock_num)
     return_json(good)
-    SampleMailer.send_when_update(current_user,good).deliver if good.stock_num <= good.notification_num
+    SampleWorker.perform_async(current_user.id, good.id) if good.stock_num <= good.notification_num
   end
 
   private
@@ -60,6 +60,10 @@ class GoodsController < ApplicationController
     if good.save
       render json: { stock_num: good.stock_num }.to_json
     end
+  end
+
+  def send_mail
+    SampleMailer.send_when_update(current_user,good).deliver
   end
 
 end

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+
   root to: "goods#index"
   resources :goods, only: [:index, :create, :new, :edit, :update, :destroy]
   resources :categories, only: [:index, :create, :new, :edit, :update, :destroy]
