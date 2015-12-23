@@ -1,4 +1,19 @@
 <div class="contents row">
+
+
+<div class='content'>
+  <div id="search-box">
+    <%= form_tag('new', method: :get) do %>
+        <%= text_field_tag :book_search, "",  id: "book_search", name: "keyword", placeholder: "キーワードを打ち込んでください", style: "width: 200px;"%><button title="検索" type="submit">検索</button>
+    <% end %>
+  </div>
+  <h2>検索結果</h2>
+  <div id='book_list'>
+   <%= render partial: 'book_list' %>
+  </div>
+</div>
+
+
   <h2 class="index_new">新しい商品を登録</h2>
   <%= form_for(@good , url: goods_path) do |f| %>
 

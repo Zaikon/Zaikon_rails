@@ -53,3 +53,4 @@ gem 'jquery-turbolinks'
 gem "font-awesome-rails"
 gem 'sidekiq'
 gem 'sinatra', require: false
+gem 'amazon-ecs'
