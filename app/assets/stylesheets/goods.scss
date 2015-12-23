@@ -90,7 +90,7 @@
       font-size: 1.4em;
       font-weight: bold;
       background-color: white;
-      z-index:9999;
+      z-index:2;
       form {
         position: relative;
         top: 25%;
@@ -136,7 +136,7 @@
       font-size: 1.4em;
       font-weight: bold;
       background-color: white;
-      z-index:9999;
+      z-index:2;
       form {
         position: relative;
         top: 25%;
@@ -160,4 +160,120 @@
   text-decoration: none;
   color: rgb(108,108,108);
   font-size: 18px;
+}
+
+.modal-content {
+    position: fixed;
+    display:none;
+    z-index:99;
+    width: 660px;
+    margin: 0 auto;
+    color: rgb(108,108,108);
+    font-size: 18px;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.modal-content p {
+    margin:0;
+    padding:0;
+}
+
+.modal-overlay {
+    z-index:10;
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:120%;
+    background-color:rgba(0,0,0,0.75);
+}
+
+.modal-open {
+    color:#00f;
+    text-decoration:underline;
+}
+
+.modal-open:hover {
+    cursor:pointer;
+    color:#f00;
+}
+
+.modal_menu {
+    color: rgb(108,108,108);
+    font-size: 18px;
+    border-radius: 8px;
+    $black: #292929;
+    box-shadow: 0 0 10px rgba($black,0.2);
+  .modal-close {
+      margin-top: 30px;
+      display: inline-block;
+      color: white;
+      background-color: rgb(55,173,233);
+      width: 100%;
+      padding: 2px 6px 3px;
+      border: medium solid rgb(55,173,233);
+      border-radius: 20px;
+      outline: 0;
+      text-align: center;
+      line-height: 42px;
+      text-decoration: none;
+      &:hover {
+        color: white;
+      }
+  }
+.image {
+    display: inline-block;
+    width: 100%;
+    height: 50%;
+    margin: 40% auto;
+    img {
+    max-width: 200px;
+    min-height: 200px;
+    max-height: 220px;
+    }
+  }
+  .text {
+    margin-top: 8%;
+    .form_height {
+        height: 56px;
+      }
+    .botton {
+        margin-top: 10px;
+        // height: 100%;
+        display: inline-block;
+        color: rgb(55,173,233);
+        background-color: white;
+        width: 30%;
+        padding: 2px 6px 3px;
+        border: thin solid rgb(55,173,233);
+        border-radius: 10px;
+        outline: 0;
+        text-align: center;
+        line-height: 44px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    .pay {
+      position: absolute;
+      left: 0;
+
+    }
+    .edit {
+      position: absolute;
+      left: 33%;
+    }
+    .delete {
+      color: rgb(255,101,127);
+      border: thin solid rgb(255,101,127);
+      position: absolute;
+      left: 66%;
+    }
+  }
+}
+
+.modal-close:hover {
+    cursor:pointer;
+    color:#f00;
 }

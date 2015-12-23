@@ -1,13 +1,16 @@
-<span class="col-xs-12 col-sm-6 col-md-4 col-lg-3 clear">
+<span class="col-xs-12 col-sm-6 col-md-4 col-lg-3 clear"  >
 <ul id="<%= good.id %>" class="count flame">
-  <!-- 画像の表示 -->
-  <span class="image">
-    <%= image_tag(good.image) %>
-  </span>
-  <!-- 商品名の表示 -->
-  <span class="modal">
-    <a>商品名：<%= good.name %></a>
-  </span>
+  <!-- モーダル可動部 -->
+  <div data-target="con<%= good.id %>" class="modal-open">
+    <!-- 画像の表示 -->
+    <span class="image">
+      <%= image_tag(good.image) %>
+    </span>
+    <!-- 商品名の表示 -->
+    <span class="modal">
+      <a>商品名：<%= good.name %></a>
+    </span>
+  </div>
   <!-- 在庫数・単位・の表示 -->
   <span class="botton">
     <span class="left-botton">
@@ -50,4 +53,26 @@
     </li>
   </span>
 </ul>
+
+<!-- モーダル画面 -->
+<div id="con<%= good.id %>" class="modal-content modal_menu container">
+  <div class="col-sm-5">
+    <span class="image">
+      <%= image_tag(good.image) %>
+    </span>
+  </div>
+  <div class="col-sm-7 text">
+    <hr>
+    <p>商品名：<%= good.name %></p>
+    <hr>
+    <p>在庫数：<%= good.stock_num %><%= good.counting_type %></p>
+    <hr>
+    <p>通知在庫数：<%= good.notification_num %><%= good.counting_type %></p>
+    <hr>
+    <%= link_to '購入する', "#{good.amazon_url}" , target: "blank", class: "pay botton form-height" %>
+    <%= link_to '編集する', edit_good_path(good), class: "edit botton form-height" %>
+    <%= link_to '削除する', good_path(good), method: :delete, class: "delete botton form-height" %>
+  </div>
+  <p><a class="modal-close form-height">閉じる</a></p>
+</div>
 </span>
