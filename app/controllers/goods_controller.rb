@@ -37,12 +37,14 @@ class GoodsController < ApplicationController
     good = Good.find(params[:id])
     good.increment(:stock_num)
     return_json(good)
+    # SampleMailer.send_when_update(current_user,good).deliver if good.stock_num <= good.notification_num
   end
 
   def down
     good = Good.find(params[:id])
     good.decrement(:stock_num)
     return_json(good)
+    SampleMailer.send_when_update(current_user,good).deliver if good.stock_num <= good.notification_num
   end
 
   private
