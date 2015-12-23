@@ -151,16 +151,14 @@
   }
 }
 
-.modal {
-  display: none;
-}
-
 // グッズの新規登録に関するcss
 .deco_none {
   text-decoration: none;
   color: rgb(108,108,108);
   font-size: 18px;
 }
+
+// モーダルに関するCSS
 
 .modal-content {
     position: fixed;
@@ -199,6 +197,7 @@
     cursor:pointer;
     color:#f00;
 }
+
 
 .modal_menu {
     color: rgb(108,108,108);
