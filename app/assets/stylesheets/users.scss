@@ -1,0 +1,26 @@
+.user {
+  .botton {
+      margin-top: 20px;
+      // height: 100%;
+      display: inline-block;
+      color: rgb(55,173,233);
+      background-color: white;
+      width: 48%;
+      padding: 2px 6px 3px;
+      border: thin solid rgb(55,173,233);
+      border-radius: 10px;
+      outline: 0;
+      text-align: center;
+      line-height: 44px;
+      text-decoration: none;
+      font-size: 20px;
+  }
+  .edit {
+    float: left;
+  }
+  .delete {
+    float: right;
+    color: rgb(255,101,127);
+    border: thin solid rgb(255,101,127);
+  }
+}
