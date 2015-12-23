@@ -1,0 +1,12 @@
+<div class="contents row">
+  <h2>ユーザー管理</h2>
+  <div class="user">
+    <hr>
+    <div><%= @user.name %>さんの登録しているメールアドレス</div>
+    <br>
+    <div><%= @user.email %></div>
+    <hr>
+    <%= link_to "アカウント編集", edit_user_path(@user), class: "edit botton" %>
+    <%= link_to "アカウント削除", user_path(@user), method: :delete, class: "delete botton" %>
+  </div>
+</div>
