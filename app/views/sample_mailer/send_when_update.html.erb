@@ -9,6 +9,10 @@
     p hr {
       color: #2d2a24;
     }
+    img {
+      max-width: 200px;
+      max-height: 220px;
+    }
   </style>
 </head>
 <body>
@@ -21,6 +25,7 @@
   <p>
     現在在庫数は、残り <%= @good.stock_num %><%= @good.counting_type %> です
   </p>
+  <%= image_tag(@good.image) %>
   <p>
     注文はコチラから→<%= @good.amazon_url %>
   </p>
