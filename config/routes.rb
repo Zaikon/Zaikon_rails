@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       sessions: 'api/users/sessions',
       registrations: 'api/users/registrations',
     }
+    get '/me' => 'credentials#me'
+
     resources :categories, only: [:index]
     resources :goods, only: [:delete, :edit] do
       member do
