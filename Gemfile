@@ -17,6 +17,8 @@ gem 'devise'
 gem 'jquery-turbolinks'
 gem 'doorkeeper'
 gem "font-awesome-rails"
+gem 'sidekiq'
+gem 'sinatra', require: false
 
 group :development, :test do
   gem 'byebug'

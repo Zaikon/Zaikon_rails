@@ -1,0 +1,19 @@
+<div class="contents row">
+<h2 class="index_new">ユーザーの編集</h2>
+    <%= form_for(@user, url: user_path) do |f| %>
+
+    <div class="form-group">
+        <%= f.label :ユーザー名 %><br />
+        <%= f.text_field :name, placeholder: "#{@user.name}", class: "form-control form_height" %>
+        </div>
+    <br>
+
+    <div class="form-group">
+        <%= f.label :メールアドレス（半角英数） %><br />
+        <%= f.text_field :email, placeholder: "#{@user.email}", class: "form-control form_height" %>
+        </div>
+    <br>
+
+    <%= f.submit "再登録する" , class: "submit form_height"%>
+    <% end %>
+</div>

@@ -1,3 +1,59 @@
 // Place all the styles related to the categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// indexに関するCSS
+._category {
+  height: 60px;
+  position: relative;
+  hr {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+  .name {
+    position: absolute;
+    left: 3%;
+    top: 21%;
+    line-height: 54px;
+    font-size: 25px;
+  }
+  .botton {
+      color: rgb(55,173,233);
+      background-color: white;
+      width: 20%;
+      padding: 2px 6px 3px;
+      border: thin solid rgb(55,173,233);
+      border-radius: 10px;
+      outline: 0;
+      text-align: center;
+      line-height: 44px;
+      text-decoration: none;
+      font-size: 20px;
+  }
+  .edit {
+    position: absolute;
+    right: 25%;
+    top: 27%;
+  }
+  .delete {
+    color: rgb(255,101,127);
+    border: thin solid rgb(255,101,127);
+    position: absolute;
+    right: 3%;
+    top: 27%;
+  }
+}
+.contents .enter {
+      display: inline-block;
+      margin-top: 30px;
+      color: white;
+      background-color: rgb(55,173,233);
+      width: 100%;
+      padding: 2px 6px 3px;
+      border: medium solid rgb(55,173,233);
+      border-radius: 20px;
+      outline: 0;
+      text-align: center;
+      line-height: 52px;
+      text-decoration: none;
+    }

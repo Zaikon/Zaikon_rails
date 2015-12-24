@@ -1,5 +1,11 @@
-<%= form_for(@category, url: category_path) do |f| %>
-  <p>カテゴリー名を再登録してください！</p>
-  <%= f.text_field :name, placeholder: "#{@category.name}"%>
-  <%= f.submit "再登録する" %>
-<% end %>
+<div class="contents row">
+  <%= form_for(@category, url: category_path) do |f| %>
+    <h2>カテゴリー名を再登録</h2>
+
+    <div class="form-group">
+    <%= f.text_field :name, placeholder: "#{@category.name}", class: "form-control form_height"%>
+    </div>
+
+    <%= f.submit "再登録する", class: "submit form_height" %>
+  <% end %>
+</div>
