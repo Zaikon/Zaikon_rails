@@ -65,7 +65,7 @@
     <br>
 
     <div class="form-group">
-      <%= f.label :カテゴリーの選択sentaku %><br>
+      <%= f.label :カテゴリーの選択 %><br>
       <% @categories.each do |category| %>
       <div class="radio">
         <%= f.radio_button :category_id , "#{category.id}", class: "form-control form_height radio_botton" %>
