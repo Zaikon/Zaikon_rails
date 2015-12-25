@@ -37,6 +37,8 @@
       </div>
   </div>
 
+  <div style="text-align: center; text-decoration: underline; color: red;"><%= @alert3 if @alert3.present? %></div>
+
 <!-- 以下入力フォーム -->
   <%= form_for(@good , url: goods_path) do |f| %>
 
@@ -53,7 +55,7 @@
     <br>
 
     <div class="form-group">
-    <%= f.label :通知在庫数（半角英数） %><br />
+    <%= f.label :通知を送る在庫数（半角英数） %><br />
     <%= f.text_field :notification_num, placeholder: "アカウントへ通知を送る在庫数を入力してください" , class: "form-control form_height" %>
     </div>
     <br>

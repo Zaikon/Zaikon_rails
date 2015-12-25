@@ -46,6 +46,10 @@
       border: 0;
       border-radius: 20px;
       outline: 0;
+      &:hover {
+        // background-color: white;
+        opacity: 0.6;
+      }
     }
     .search_submit {
       color: rgb(55,173,233);

@@ -1,6 +1,7 @@
 <div class="_category">
   <hr>
   <div class="name"><%= category.name %></div>
+  <%= link_to "商品を追加", new_good_path, class: "new botton" %>
   <%= link_to "編集する", edit_category_path(category), class: "edit botton" %>
   <%= link_to "削除する", category_path(category), method: :delete, class: "delete botton" %>
 </div>

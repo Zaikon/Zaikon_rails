@@ -11,6 +11,9 @@ class GoodsController < ApplicationController
     @good = Good.new
     @categories = Category.where(user_id: current_user.id)
     amazon_api
+    if current_user.categories[0].goods.empty?
+      @alert3 = "↑のボタンの機能を利用して登録してみましょう！"
+    end
   end
 
   def create

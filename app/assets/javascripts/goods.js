@@ -160,7 +160,7 @@ $(function() {
         $('#good_image').val(image_url);
         $('#good_amazon_url').val(amazon_url);
     });
-    // 「.modal-overlay」あるいは「.modal-close」をクリック
+    // 「.modal-overlay」あるいは「.api-return-list」をダブルクリック
     $('.modal-content').delegate('.api-return-list', 'dblclick', function(){
         // モーダルコンテンツとオーバーレイをフェードアウト
         $(modal).fadeOut('fast');
@@ -169,4 +169,5 @@ $(function() {
             $('.modal-overlay').remove();
         });
     });
+    // 「.modal-overlay」あるいは「.api-return-list」をエンター
 });
