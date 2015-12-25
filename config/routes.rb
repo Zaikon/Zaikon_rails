@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     get '/me' => 'credentials#me'
 
     resources :categories, only: [:index]
-    resources :goods, only: [:delete, :edit] do
+    resources :goods, only: [:delete, :update] do
       member do
         put 'count_up'
         put 'count_down'
