@@ -1,8 +1,12 @@
+  $blue : rgb(55,173,233);
+  $gray : rgb(221,221,221);
+  $red  : rgb(236, 0, 19);
+
 // カテゴリーに関するCSS
 .category {
   height: 40px;
   width: 100%;
-  background-color: rgb(255,255,255);
+  background-color: white;
   text-align: center;
   font-size: 20px;
   margin-bottom: 20px;
@@ -27,7 +31,7 @@
 }
 
 .category .active {
-  color: rgb(55,173,233)
+  color: $blue;
 }
 
 // グッズコンテンツ全体に関するCSS
@@ -143,7 +147,7 @@
         top: 25%;
       }
       input {
-        color: rgb(55,173,233);
+        color: $blue;
         background-color: white;
         border-style: none;
         outline: 0;
@@ -210,10 +214,10 @@
       margin-top: 30px;
       display: inline-block;
       color: white;
-      background-color: rgb(55,173,233);
+      background-color: $blue;
       width: 100%;
       padding: 2px 6px 3px;
-      border: medium solid rgb(55,173,233);
+      border: medium solid $blue;
       border-radius: 20px;
       outline: 0;
       text-align: center;
@@ -243,11 +247,11 @@
         margin-top: 20px;
         // height: 100%;
         display: inline-block;
-        color: rgb(55,173,233);
+        color: $blue;
         background-color: white;
         width: 30%;
         padding: 2px 6px 3px;
-        border: thin solid rgb(55,173,233);
+        border: thin solid $blue;
         border-radius: 10px;
         outline: 0;
         text-align: center;
@@ -279,7 +283,9 @@
 }
 
 .list-border {
-  margin: 8px;
+  // margin: 8px;
+  border: 5px;
   border-radius: 10px;
-  border: medium solid rgb(55,173,233);
+  // border: 1px solid $blue;
+  background-color: rgb(225, 225, 225);
 }

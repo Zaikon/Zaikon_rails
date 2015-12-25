@@ -14,10 +14,10 @@ $(function() {
   // タブ切り替え機能
   $('.category a').on('click', function() {
     $('.category a').removeClass("active")
-    $('.goods_list').removeClass("active").fadeOut(50);
+    $('.goods_list').removeClass("active").fadeOut(0);
     var list_num = $(this).attr("class")
     $(this).addClass("active")
-    $('.goods_list_background' + ' .' + list_num).fadeIn(1000);
+    $('.goods_list_background' + ' .' + list_num).fadeIn(500);
   });
 });
 
@@ -86,7 +86,7 @@ $(window).on('page:load page:change', function() {
   var triggerAjax = function(input) {
     if(preInput !== input){                        //文字列が変更ときのみメソッド実行する
       clearTimeout(timer);
-      timer = setTimeout(ajaxSearch, 400, input);
+      timer = setTimeout(ajaxSearch, 300, input);
       // 処理を200ms毎に実行
     };
   };
@@ -109,7 +109,7 @@ $(function(){
         $('.modal-overlay').fadeIn('fast');
 
         // モーダルコンテンツのIDを取得
-        var modal = '#' + $(this).attr('data-target');
+        modal = '#' + $(this).attr('data-target');
         // モーダルコンテンツの表示位置を設定
         modalResize();
          // モーダルコンテンツフェードイン
@@ -160,4 +160,14 @@ $(function() {
         $('#good_image').val(image_url);
         $('#good_amazon_url').val(amazon_url);
     });
+    // 「.modal-overlay」あるいは「.api-return-list」をダブルクリック
+    $('.modal-content').delegate('.api-return-list', 'dblclick', function(){
+        // モーダルコンテンツとオーバーレイをフェードアウト
+        $(modal).fadeOut('fast');
+        $('.modal-overlay').fadeOut('fast',function(){
+            // オーバーレイを削除
+            $('.modal-overlay').remove();
+        });
+    });
+    // 「.modal-overlay」あるいは「.api-return-list」をエンター
 });

@@ -1,13 +1,18 @@
+  $blue : rgb(55,173,233);
+  $gray : rgb(221,221,221);
+  $red  : rgb(236, 0, 19);
+  $red_delete : rgb(255,101,127);
+
 .user {
   .botton {
       margin-top: 20px;
       // height: 100%;
       display: inline-block;
-      color: rgb(55,173,233);
+      color: $blue;
       background-color: white;
       width: 48%;
       padding: 2px 6px 3px;
-      border: thin solid rgb(55,173,233);
+      border: thin solid $blue;
       border-radius: 10px;
       outline: 0;
       text-align: center;
@@ -20,7 +25,7 @@
   }
   .delete {
     float: right;
-    color: rgb(255,101,127);
-    border: thin solid rgb(255,101,127);
+    color: $red_delete;
+    border: thin solid $red_delete;
   }
 }
