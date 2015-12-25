@@ -17,5 +17,8 @@ module Zaikon
     end
     
     config.active_record.raise_in_transactional_callbacks = true
+
+    I18n.enforce_available_locales = true
+     config.i18n.default_locale = :ja
   end
 end

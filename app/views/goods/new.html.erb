@@ -3,6 +3,20 @@
   <h2 class="index_new">新しい商品を登録</h2>
   <br>
 
+  <% if @good_params.present?  %>
+    <% if @good_params.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= @good_params.errors.count %>件のエラーが発生しました。</h2>
+
+        <ul>
+        <% @good_params.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+
 <!-- モーダルopen部分 -->
   <div data-target="con1" class="modal-api-open">
     <input type="submit" class="submit form_height" value="商品を検索して登録" style="text-align: center;"></input>

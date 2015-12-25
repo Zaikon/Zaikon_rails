@@ -14,8 +14,15 @@ class GoodsController < ApplicationController
   end
 
   def create
-    Good.create(create_params)
-    redirect_index
+    good = Good.new(create_params)
+    if good.save
+      redirect_index
+    else
+      @good_params = good
+      @good = good
+      @categories = Category.where(user_id: current_user.id)
+      render :new, val: @good_params, val: @good , val: @categories
+    end
   end
 
   def edit
@@ -52,8 +59,12 @@ class GoodsController < ApplicationController
     params.require(:good).permit(:name, :stock_num, :notification_num, :image, :amazon_url, :category_id, :counting_type)
   end
 
-  def redirect_index
+  def redirect_new
     redirect_to :action => "index"
+  end
+
+  def redirect_index
+    redirect_to :action => "new"
   end
 
   def return_json(good)
@@ -64,6 +75,18 @@ class GoodsController < ApplicationController
 
   def send_mail
     SampleMailer.send_when_update(current_user,good).deliver
+  end
+
+  def errors_text_set(good)
+    errors = "が登録出来ていません"
+    good.errors.messages[:name] = "商品名" + errors
+    good.errors.messages[:stock_num] = "現在の在庫数" + errors
+    good.errors.messages[:notification_num] = "通知在庫数" + errors
+    good.errors.messages[:image] = "画像URL" + errors
+    good.errors.messages[:amazon_url] = "AmazonのURL" + errors
+    good.errors.messages[:category_id] = "カテゴリー" + errors
+    good.errors.messages[:counting_type] = "数え方" + errors
+    good
   end
 
   def amazon_api
