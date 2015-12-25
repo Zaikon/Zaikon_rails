@@ -18,7 +18,6 @@ class GoodsController < ApplicationController
     if good.save
       redirect_index
     else
-      @good_params = good
       @good = good
       @categories = Category.where(user_id: current_user.id)
       render :new, val: @good_params, val: @good , val: @categories
@@ -32,8 +31,13 @@ class GoodsController < ApplicationController
 
   def update
     good = Good.find(params[:id])
-    good.update(create_params)
-    redirect_index
+    if good.update(create_params)
+      redirect_index
+    else
+      @good = good
+      @categories = Category.where(user_id: current_user.id)
+      render :edit, val: @good_params, val: @good , val: @categories
+    end
   end
 
   def destroy
@@ -59,11 +63,11 @@ class GoodsController < ApplicationController
     params.require(:good).permit(:name, :stock_num, :notification_num, :image, :amazon_url, :category_id, :counting_type)
   end
 
-  def redirect_new
+  def redirect_index
     redirect_to :action => "index"
   end
 
-  def redirect_index
+  def redirect_newe
     redirect_to :action => "new"
   end
 
@@ -75,18 +79,6 @@ class GoodsController < ApplicationController
 
   def send_mail
     SampleMailer.send_when_update(current_user,good).deliver
-  end
-
-  def errors_text_set(good)
-    errors = "が登録出来ていません"
-    good.errors.messages[:name] = "商品名" + errors
-    good.errors.messages[:stock_num] = "現在の在庫数" + errors
-    good.errors.messages[:notification_num] = "通知在庫数" + errors
-    good.errors.messages[:image] = "画像URL" + errors
-    good.errors.messages[:amazon_url] = "AmazonのURL" + errors
-    good.errors.messages[:category_id] = "カテゴリー" + errors
-    good.errors.messages[:counting_type] = "数え方" + errors
-    good
   end
 
   def amazon_api

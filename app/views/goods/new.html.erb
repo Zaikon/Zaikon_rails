@@ -3,13 +3,12 @@
   <h2 class="index_new">新しい商品を登録</h2>
   <br>
 
-  <% if @good_params.present?  %>
-    <% if @good_params.errors.any? %>
+  <% if @good.present?  %>
+    <% if @good.errors.any? %>
       <div id="error_explanation">
-        <h2><%= @good_params.errors.count %>件のエラーが発生しました。</h2>
-
+        <h2><%= @good.errors.count %>件のエラーが発生しました。</h2>
         <ul>
-        <% @good_params.errors.full_messages.each do |message| %>
+        <% @good.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
         </ul>
