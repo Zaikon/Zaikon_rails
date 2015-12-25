@@ -11,8 +11,12 @@ class UsersController < ApplicationController
 
   def update
     user = current_user
-    user.update(edit_params)
-    redirect_index
+    if user.update(edit_params)
+      redirect_index
+    else
+      @user = user
+      render :edit, val: @user
+    end
   end
 
   def destroy
