@@ -1,6 +1,6 @@
 class GoodsController < ApplicationController
-  #ログインしていないユーザーが不正なアクセスをしない様に、予め設定しておく。
   before_action :authenticate_user!
+  before_action :category_registered, only: [:index, :new]
   # append_after_action :redirect_index, only: [:create, :update, :destroy]
 
   def index
@@ -79,6 +79,13 @@ class GoodsController < ApplicationController
 
   def send_mail
     SampleMailer.send_when_update(current_user,good).deliver
+  end
+
+  def category_registered
+    @categories = []
+    @alert1 = "まずはカテゴリーを登録してください！！"
+    @alert2 = "登録後に商品の登録が出来ます。"
+    render :template => "categories/index", val: @categories, val: @alert unless current_user.categories.present?
   end
 
   def amazon_api

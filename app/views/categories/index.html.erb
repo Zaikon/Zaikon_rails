@@ -1,5 +1,7 @@
 <div class="contents row">
   <h2>カテゴリー管理</h2>
+  <div style="text-align: center;"><%= @alert1 if @alert1.present? %></div>
+  <div style="text-align: center;"><%= @alert2 if @alert2.present? %></div>
   <br>
   <%= render @categories %>
   <span class="_category"><hr></span>

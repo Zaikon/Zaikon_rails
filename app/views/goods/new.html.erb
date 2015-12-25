@@ -28,10 +28,9 @@
       <div id="search-box">
         <%= form_tag('new', method: :get, class: "search_form") do %>
           <!-- <div class="form-group"> -->
-            <%= text_field_tag :api_good_search, "",  id: "api_good_search", name: "keyword", placeholder: "キーワードを打ち込んでください", style: "width: 100%; display: inline;", class: "form-control form_height" %>
+            <%= text_field_tag :api_good_search, "",  id: "api_good_search", name: "keyword", placeholder: "キーワードを入力してください", style: "width: 100%", class: "form-control form_height" %>
           <!-- </div> -->
         <% end %>
-        <button title="検索" class="modal-close search_submit form_height">閉じる</button>
       </div>
       <div id='api_good_list'>
        <%= render partial: 'api_good' %>

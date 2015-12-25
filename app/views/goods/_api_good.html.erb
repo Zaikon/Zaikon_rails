@@ -2,7 +2,7 @@
     <% if @api_goods.present? %>
     <% @api_goods.each do |api_good| %>
       <div class="api-return-list">
-        <%= link_to (image_tag(api_good.image_url, style: "max-width: 70px; max-height: 75px;")) , api_good.url %>
+        <%= link_to (image_tag(api_good.image_url, style: "max-width: 65px; max-height: 70px; border: 10px;")) , api_good.url %>
         <span style="font-size: 12px;"><%= api_good.price %></span>
         <span style="font-size: 12px;" class="title"><%= api_good.title %></span>
       </div>

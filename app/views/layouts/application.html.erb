@@ -19,7 +19,9 @@
             <% unless user_signed_in? %>
               <li><%= link_to "ログイン", new_user_session_path %></li>
             <% else %>
+              <% if current_user.categories.present? %>
               <li><%= link_to "新規商品登録", new_good_path %></li>
+              <% end %>
               <li><%= link_to "カテゴリー管理", categories_path %></li>
               <li><%= link_to "ユーザー管理", users_path(current_user) %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
