@@ -10,6 +10,31 @@ class GoodsController < ApplicationController
   def new
     @good = Good.new
     @categories = Category.where(user_id: current_user.id)
+    if params[:keyword].present?
+      #デバックログ出力するために記述
+      Amazon::Ecs.debug = true
+
+      # Amazon::Ecs::Responceオブジェクトの取得
+      api_goods = Amazon::Ecs.item_search(
+        params[:keyword],
+        search_index:  'All',
+        dataType: 'script',
+        response_group: 'ItemAttributes, Images',
+        country:  'jp'
+      )
+
+      # 本のタイトル,画像URL, 詳細ページURLの取得
+      @api_goods = []
+      api_goods.items.each do |item|
+        api_good = Apigood.new(
+          item.get('ItemAttributes/Title'),
+          item.get('LargeImage/URL'),
+          item.get('DetailPageURL'),
+          item.get('ItemAttributes/ListPrice/FormattedPrice'),
+        )
+        @api_goods << api_good
+      end
+    end
   end
 
   def create
@@ -37,7 +62,6 @@ class GoodsController < ApplicationController
     good = Good.find(params[:id])
     good.increment(:stock_num)
     return_json(good)
-    # SampleMailer.send_when_update(current_user,good).deliver if good.stock_num <= good.notification_num
   end
 
   def down
@@ -65,5 +89,4 @@ class GoodsController < ApplicationController
   def send_mail
     SampleMailer.send_when_update(current_user,good).deliver
   end
-
 end

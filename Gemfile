@@ -28,3 +28,13 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
+gem 'pry-rails'
+gem 'compass-rails'
+gem 'sprockets', '2.11.0'
+gem 'devise'
+gem 'jquery-turbolinks'
+gem "font-awesome-rails"
+gem 'sidekiq'
+gem 'sinatra'
+gem 'amazon-ecs'

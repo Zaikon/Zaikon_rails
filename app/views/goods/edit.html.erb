@@ -1,5 +1,28 @@
 <div class="contents row">
 <h2 class="index_new">商品情報の編集</h2>
+
+<!-- モーダルopen部分 -->
+  <div data-target="con1" class="modal-api-open">
+    <input type="submit" class="submit form_height" value="商品を検索して再登録" style="text-align: center;"></input>
+  </div>
+  <br>
+
+<!-- モーダル検索部分 -->
+  <div id="con1" class="modal-content modal_menu container">
+    <h2 class="index_new">商品名を検索してください</h2>
+      <div id="search-box">
+        <%= form_tag('new', method: :get, class: "search_form") do %>
+          <!-- <div class="form-group"> -->
+            <%= text_field_tag :api_good_search, "",  id: "api_good_search", name: "keyword", placeholder: "キーワードを打ち込んでください", style: "width: 100%; display: inline;", class: "form-control form_height" %>
+          <!-- </div> -->
+        <% end %>
+        <button title="検索" class="modal-close search_submit form_height">閉じる</button>
+      </div>
+      <div id='api_good_list'>
+       <%= render partial: 'api_good' %>
+      </div>
+  </div>
+
     <%= form_for(@good, url: good_path) do |f| %>
 
     <div class="form-group">

@@ -206,7 +206,7 @@
     border-radius: 8px;
     $black: #292929;
     box-shadow: 0 0 10px rgba($black,0.2);
-  .modal-close {
+  .modal-close-botton {
       margin-top: 30px;
       display: inline-block;
       color: white;
@@ -276,4 +276,9 @@
 .modal-close:hover {
     cursor:pointer;
     color:#f00;
+}
+
+.list-border {
+  border-radius: 10px;
+  border: medium solid rgb(55,173,233);
 }
