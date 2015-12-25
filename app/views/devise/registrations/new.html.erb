@@ -24,6 +24,11 @@
       <%= f.password_field :password_confirmation, autocomplete: "off" , type: "password", class: "form-control form_height"%>
     </div>
 
+    <div class="form_group">
+      <%= f.label :your_name %><br />
+      <%= f.password_field :name, autocomplete: "off" , type: "name", class: "form-control form_height"%>
+    </div>
+
     <br>
     <div >
       <%= f.submit "Sign up" , class: "submit form_height"%>
