@@ -1,5 +1,19 @@
 <div class="contents row">
 <h2 class="index_new">ユーザーの編集</h2>
+
+<% if @user.present?  %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= @user.errors.count %>件のエラーが発生しました。</h2>
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+
     <%= form_for(@user, url: user_path) do |f| %>
 
     <div class="form-group">
