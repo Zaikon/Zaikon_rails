@@ -65,21 +65,18 @@
     <br>
 
     <div class="form-group">
-    <%= f.label :カテゴリーID（半角英数） %><br />
-    <%= f.text_field :category_id, placeholder: "数字を入力してください" , class: "form-control form_height" %>
+      <%= f.label :カテゴリーの選択 %><br>
+      <% @categories.each do |category| %>
+      <div class="radio">
+        <%= f.radio_button :category_id , "#{category.id}", class: "form-control form_height radio_botton" %>
+        <span class="radio_text"><%= category.name %></span>
+      </div>
+      <% end %>
+    </div>
 
-    <br>
-    <p>あなたのカテゴリー 一覧</p>
-    <a class="deco_none">ID</a><a class="deco_none">&nbsp;&nbsp;カテゴリー名</a>
-    <br>
-    <% @categories.each do |category| %>
-      <%= category.id %>
-      &nbsp;&nbsp;&nbsp;&nbsp;<%= category.name%>
+    <div class="form-group">
       <br>
-    <% end %>
-
-    <br>
-    <%= f.submit "登録する" , class: "submit form_height" %>
+      <%= f.submit "登録する" , class: "submit form_height" %>
     </div>
     <br>
   <% end %>
