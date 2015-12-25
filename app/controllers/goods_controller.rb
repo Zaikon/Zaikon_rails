@@ -14,8 +14,14 @@ class GoodsController < ApplicationController
   end
 
   def create
-    Good.create(create_params)
-    redirect_index
+    good = Good.new(create_params)
+    if good.save
+      redirect_index
+    else
+      @good = good
+      @categories = Category.where(user_id: current_user.id)
+      render :new, val: @good_params, val: @good , val: @categories
+    end
   end
 
   def edit
@@ -25,8 +31,13 @@ class GoodsController < ApplicationController
 
   def update
     good = Good.find(params[:id])
-    good.update(create_params)
-    redirect_index
+    if good.update(create_params)
+      redirect_index
+    else
+      @good = good
+      @categories = Category.where(user_id: current_user.id)
+      render :edit, val: @good_params, val: @good , val: @categories
+    end
   end
 
   def destroy
@@ -54,6 +65,10 @@ class GoodsController < ApplicationController
 
   def redirect_index
     redirect_to :action => "index"
+  end
+
+  def redirect_newe
+    redirect_to :action => "new"
   end
 
   def return_json(good)
