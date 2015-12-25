@@ -1,4 +1,4 @@
-class Book
+class Apigood
   # プロパティの設定
   attr_accessor :title, :image_url, :url, :price
 

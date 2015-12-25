@@ -1,9 +1,0 @@
-<% if @books.present? %>
-  <% @books.each do |book| %>
-    <div class="list">
-      <%= link_to (image_tag(book.image_url)), book.url %>
-      <%= book.title %>
-      <%= book.price %>
-    </div>
-  <% end %>
-<% end %>

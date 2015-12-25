@@ -15,7 +15,7 @@ class GoodsController < ApplicationController
       Amazon::Ecs.debug = true
 
       # Amazon::Ecs::Responceオブジェクトの取得
-      books = Amazon::Ecs.item_search(
+      api_goods = Amazon::Ecs.item_search(
         params[:keyword],
         search_index:  'All',
         dataType: 'script',
@@ -24,15 +24,15 @@ class GoodsController < ApplicationController
       )
 
       # 本のタイトル,画像URL, 詳細ページURLの取得
-      @books = []
-      books.items.each do |item|
-        book = Book.new(
+      @api_goods = []
+      api_goods.items.each do |item|
+        api_good = Apigood.new(
           item.get('ItemAttributes/Title'),
           item.get('LargeImage/URL'),
           item.get('DetailPageURL'),
           item.get('ItemAttributes/ListPrice/FormattedPrice'),
         )
-        @books << book
+        @api_goods << api_good
       end
     end
   end
@@ -89,5 +89,4 @@ class GoodsController < ApplicationController
   def send_mail
     SampleMailer.send_when_update(current_user,good).deliver
   end
-
 end
