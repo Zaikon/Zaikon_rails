@@ -1,7 +1,7 @@
 # Structure of DataBase
 
 ## User
-### association
+### model-association
 
 ```
 has_many :categories
